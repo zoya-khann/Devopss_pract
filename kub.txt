@@ -1,0 +1,46 @@
+# 1. Check Kubernetes client version
+kubectl version --client
+
+
+# 2. Check cluster information
+kubectl cluster-info
+
+
+# 3. Get available nodes
+kubectl get nodes
+
+
+# 4. Create Nginx deployment
+kubectl create deployment nginx --image=nginx
+
+
+# 5. Check running pods
+kubectl get pods
+
+
+# 6. Expose deployment using NodePort service
+kubectl expose deployment nginx --port=80 --type=NodePort
+
+
+# 7. Check Nginx service
+kubectl get service nginx
+
+
+# 8. Port forwarding
+kubectl port-forward svc/nginx 8082:80
+
+
+# 9. Check all Kubernetes resources
+kubectl get all
+
+
+# 10. Scale deployment to 3 replicas
+kubectl scale deployment nginx --replicas=3
+
+
+# 11. Check pods after scaling
+kubectl get pod
+
+
+# 12. Check deployment status
+kubectl get deployment nginx
