@@ -1,0 +1,55 @@
+# 1. Install WSL through CMD
+wsl --install
+
+
+# 2. Download and install Docker Desktop
+# (Install Docker Desktop for Windows)
+
+
+# 3. Verify Docker installation
+docker --version
+
+
+# 4. Run first container
+docker run hello-world
+
+
+# 5. Open Git Bash and navigate to Downloads
+cd /c/Users/Admin/Downloads
+
+# Clone GitHub repository
+git clone https://github.com/jasleenk.../Portfolio-MScDevops.git
+
+# Open repository folder
+cd Portfolio-MScDevops
+
+# List repository files
+ls
+
+
+# 6. Create a Dockerfile
+touch Dockerfile
+
+echo "FROM nginx:alpine" > Dockerfile
+echo "COPY ./ /usr/share/nginx/html" >> Dockerfile
+echo "EXPOSE 80" >> Dockerfile
+
+# Display Dockerfile content
+cat Dockerfile
+
+
+# 7. Build the Docker image
+docker build -t portfolio .
+
+
+# 8. Verify the Docker image
+docker images
+
+
+# 9. Run the Docker container
+docker run -d -p 8081:80 --name portfolio-container portfolio
+
+
+# 10. Open the Dockerized website
+# Open this URL in your browser:
+# http://localhost:8081/
