@@ -1,4 +1,4 @@
-# 1. Check Kubernetes client version
+# 1. Check Kubernetes client version..in powershell admin run
 kubectl version --client
 
 
