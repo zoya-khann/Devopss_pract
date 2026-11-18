@@ -1,3 +1,5 @@
+wsl --status
+
 # 1. Open Ubuntu using WSL
 wsl -d Ubuntu
 
@@ -24,6 +26,28 @@ cd ansible_lab
 
 # 7. Create a playbook file
 nano basic_playbook.yml
+
+#playbook code
+
+---
+- name: Basic Ansible Automation
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Create a text file
+      file:
+        path: /home/zoya/ansible_file.txt
+        state: touch
+
+    - name: Write content to a file
+      copy:
+        content: "This file is created using Ansible automation"
+        dest: /home/zoya/ansible_message.txt
+
+# After typing the code:
+1. Press Ctrl + O (save).
+2. Press Enter (confirm filename).
+3. Press Ctrl + X (exit Nano).
 
 
 # 8. Execute the Ansible playbook
