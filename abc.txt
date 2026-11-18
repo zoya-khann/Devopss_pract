@@ -60,3 +60,33 @@ wsl --install
 wsl --list --online
 wsl --install -d Ubuntu
 
+#part 2docker
+cd /c/Users/admin/Downloads
+git clone url
+cd personal-profile-cardd
+ls
+touch Dockerfile
+echo "FROM nginx:alpine" > Dockerfile
+echo "COPY . /usr/share/nginx/html" >> Dockerfile
+echo "EXPOSE 80" >> Dockerfile
+cat Dockerfile
+# win+r sysdm.cpl,adv,env,sys,path,edit,new, C:\Users\admin\AppData\Local\Programs\DockerDesktop\resources\bin
+#win+r services.msc right click jenkins restart
+
+#build
+where docker
+docker --version
+
+docker build -t personal-profile-cardd .
+
+#Run Docker Container
+
+docker rm -f personal-profile-container >nul 2>&1 & docker run -d -p 8081:80 --name personal-profile-container personal-profile-cardd
+#Verify Docker Container
+docker ps
+
+https://localhost:8081/
+
+#verify in bash
+docker ps
+
