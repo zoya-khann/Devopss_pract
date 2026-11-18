@@ -53,3 +53,10 @@ docker run -d -p 8081:80 --name portfolio-container portfolio
 # 10. Open the Dockerized website
 # Open this URL in your browser:
 # http://localhost:8081/
+
+
+#installation of docker and ubuntu
+wsl --install
+wsl --list --online
+wsl --install -d Ubuntu
+
